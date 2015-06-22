@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+@SuppressWarnings("all")
 public class BlogEfficiency2 {
 	
 	private int start;
