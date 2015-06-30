@@ -33,6 +33,7 @@ public class Efficiency6 {
 	public void execute() {
 		try {
 			connection = DriverManager.getConnection(url, user, password);
+			connection.setAutoCommit(false);
 			String sqlUpdate= "insert into test values(?, ?)";
 			preparedStatement = connection.prepareStatement(sqlUpdate);
 			for(int i=start; i<start+length; i++){
@@ -41,6 +42,7 @@ public class Efficiency6 {
 				preparedStatement.addBatch();
 			}
 			preparedStatement.executeBatch();
+			connection.commit();
 			preparedStatement.close();
 			connection.close();
 		} catch (SQLException e) {

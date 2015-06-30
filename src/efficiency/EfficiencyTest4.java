@@ -18,7 +18,7 @@ public class EfficiencyTest4 {
 		
 		
 		// multivalue insert
-		// string concal use concat method
+		// string concat use concat method
 		// time: 0.7s for 10000 insert
 		new DeleteDatabaseRow();
 		start= System.currentTimeMillis();
@@ -28,10 +28,10 @@ public class EfficiencyTest4 {
 		System.out.println(end-start);
 		
 		// bulk insert
-		// time: 28.1 for 500 insert
+		// time: 1.04s for 10000 insert
 		new DeleteDatabaseRow();
 		start= System.currentTimeMillis();
-		Efficiency6 efficiency6 = new Efficiency6(3000, 500);
+		Efficiency6 efficiency6 = new Efficiency6(3000, 10000);
 		efficiency6.execute();
 		end= System.currentTimeMillis();
 		System.out.println(end-start);
